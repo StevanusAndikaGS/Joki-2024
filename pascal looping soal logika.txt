@@ -1,0 +1,162 @@
+No 1 :
+
+
+program DeretKelipatan;
+
+var
+  n, i, total: integer;
+
+begin
+  // Input jumlah angka
+  write('Masukkan jumlah angka (n): ');
+  readln(n);
+
+  // Inisialisasi total
+  total := 0;
+
+  // Menampilkan deret angka kelipatan 5 dan menghitung total
+  writeln('Deret angka kelipatan 5:');
+  for i := 1 to n do
+  begin
+    writeln(i * 5);
+    total := total + (i * 5);
+  end;
+
+  // Menampilkan total seluruh angka
+  writeln('Total seluruh angka: ', total);
+
+  readln; // Tunggu user menekan Enter
+end.
+
+
+No 2 :
+
+program DeretPola;
+
+var
+  a, b, i, angka: integer;
+
+begin
+  // Input nilai awal (a) dan jumlah perulangan (b)
+  write('Masukkan nilai awal (a): ');
+  readln(a);
+  write('Masukkan jumlah perulangan (b): ');
+  readln(b);
+
+  // Menampilkan deret bilangan dengan pola
+  writeln('Deret bilangan dengan pola "Angka berikutnya adalah 2x dari angka sebelumnya":');
+  angka := a;
+  for i := 1 to b do
+  begin
+    writeln(angka);
+    angka := angka * 2;
+  end;
+
+  readln; // Tunggu user menekan Enter
+end.
+
+
+
+3.
+program Kelipatan;
+
+var
+  inputAngka, i, angka, ganjil, genap: integer;
+
+begin
+  // Input bilangan bulat positif
+  write('Masukkan bilangan bulat positif: ');
+  readln(inputAngka);
+
+  // Inisialisasi variabel
+  ganjil := 0;
+  genap := 0;
+
+  // Menampilkan angka kelipatan 3 atau kelipatan 5 kurang dari inputAngka
+  writeln('Angka kelipatan 3 atau kelipatan 5 kurang dari ', inputAngka, ':');
+  for i := 1 to inputAngka - 1 do
+  begin
+    if (i mod 3 = 0) or (i mod 5 = 0) then
+    begin
+      writeln(i);
+
+      // Menghitung jumlah angka ganjil dan genap
+      if i mod 2 = 0 then
+        genap := genap + 1
+      else
+        ganjil := ganjil + 1;
+    end;
+  end;
+
+  // Menampilkan jumlah angka ganjil dan angka genap
+  writeln('Jumlah angka ganjil: ', ganjil);
+  writeln('Jumlah angka genap: ', genap);
+
+  readln; // Tunggu user menekan Enter
+end.
+
+
+
+
+
+
+4.program LoopXDanO;
+
+var
+  numRows, numCols, i, j: Integer;
+  symbol: Char;
+
+begin
+  // Input jumlah baris
+  write('Input jumlah baris: ');
+  readln(numRows);
+
+  // Input jumlah kolom
+  write('Input jumlah kolom: ');
+  readln(numCols);
+
+  // Loop untuk setiap baris
+  for i := 1 to numRows do
+  begin
+    // Loop untuk setiap kolom di dalam baris
+    for j := 1 to numCols do
+    begin
+      // Menentukan simbol 'X' atau 'O' berdasarkan indeks baris dan kolom
+      if (i + j) mod 2 = 0 then
+        symbol := 'X'
+      else
+        symbol := 'O';
+
+      // Menampilkan simbol
+      write(symbol, ' ');
+    end;
+
+    // Pindah ke baris baru setelah setiap baris selesai
+    writeln;
+  end;
+
+end.
+
+
+5.
+
+program ArrayLooping;
+
+var
+  numbers: array[1..5] of Integer;
+  i: Integer;
+
+begin
+  // Meminta input untuk setiap bilangan
+  for i := 1 to 5 do
+  begin
+    write('Input bilangan ke-', i, ': ');
+    readln(numbers[i]);
+  end;
+
+  // Menampilkan hasil perkalian
+  writeln('=========');
+  for i := 1 to 5 do
+    writeln(numbers[i], 'x', i, ' = ', numbers[i] * i);
+
+end.
